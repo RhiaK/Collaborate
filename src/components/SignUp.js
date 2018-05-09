@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import * as routes from '../constants/routes';
+import { auth } from '../firebase';
 
-const SignUpPage = () =>
+const SignUpPage = ({ history }) =>
   <div>
-    <h1>Sign Up Page</h1>
-    <SignUpForm />
+    <h1>Sign Up</h1>
+    <SignUpForm history={ history } />
   </div>
 
 const INITIAL_STATE = {
@@ -28,7 +29,26 @@ const byPropKey = (propertyName, value) => () => ({
   	}
 
   	onSubmit = (e) => {
+	    const {
+	      username,
+	      email,
+	      passwordOne,
+	    } = this.state;
 
+	    const {
+	      history,
+	    } = this.props;
+
+	    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+	      .then(authUser => {
+	        this.setState(() => ({ ...INITIAL_STATE }));
+	        history.push(routes.HOME);
+	      })
+	      .catch(error => {
+	        this.setState(byPropKey('error', error));
+	      });
+
+	    e.preventDefault();
   	}
 
   	render() {
@@ -39,6 +59,12 @@ const byPropKey = (propertyName, value) => () => ({
 	      passwordTwo,
 	      error,
 	    } = this.state;
+
+	    const isInvalid =
+	      passwordOne !== passwordTwo ||
+	      passwordOne === '' ||
+	      email === '' ||
+	      username === '';
 
   		return (
   			<form onSubmit={this.onSubmit}>
@@ -66,7 +92,7 @@ const byPropKey = (propertyName, value) => () => ({
 		          type="password"
 		          placeholder="Confirm Password"
 		        />
-		        <button type="submit">
+		        <button disabled={isInvalid} type="submit">
 		          Sign Up
 		        </button>
 
@@ -83,7 +109,7 @@ const SignUpLink = () =>
 		<Link to={routes.SIGN_UP}>Sign Up</Link>
 	</p>
 
-export default SignUpPage;
+export default withRouter(SignUpPage);
 export {
 	SignUpForm,
 	SignUpLink
