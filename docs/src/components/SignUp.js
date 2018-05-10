@@ -3,14 +3,14 @@ import { Link, withRouter } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import { auth } from '../firebase';
 import './App.css';
-import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import Menu, {SubMenu, MenuItem} from 'rc-menu';
 
 const SignUpPage = ({ history }) =>
-  <div className="App">
-    <h1>Sign Up</h1>
-    <SignUpForm history={ history } />
-    <img className="img1" alt="handshake" src="./favicon.ico"></img>
-  </div>
+	<div>
+	  <h1 className="App">Sign Up</h1>
+	  <SignUpForm history={ history }></SignUpForm> 	
+	  <img className="img1" alt="handshake" src="./favicon.ico"></img>
+	</div>
 
 const INITIAL_STATE = {
 	username: '',
@@ -84,64 +84,56 @@ const byPropKey = (propertyName, value) => () => ({
 	      username === '';
 
   		return (
-  			<form className="App down" onSubmit={this.onSubmit}>
-  				<input
-		          value={username}
-		          onChange={event => this.setState(byPropKey('username', event.target.value))}
-		          type="text"
-		          placeholder="Full Name"
-		        />
-		        <br></br>
-		        <input
-		          value={email}
-		          onChange={event => this.setState(byPropKey('email', event.target.value))}
-		          type="text"
-		          placeholder="Email Address"
-		        />
-		        <br></br>
-		        <input
-		          value={passwordOne}
-		          onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-		          type="password"
-		          placeholder="Password"
-		        />
-		        <br></br>
-		        <input
-		          value={passwordTwo}
-		          onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-		          type="password"
-		          placeholder="Confirm Password"
-		        />
-		        <br></br>
-			      <Dropdown className="App" group isOpen={this.state.dropdownOpen} size="lg" toggle={this.toggle}>
-			        <DropdownToggle caret>
-			          Role
-			        </DropdownToggle>
-			        <DropdownMenu>
-			          <DropdownItem>Web Developer</DropdownItem>
-			          <DropdownItem>UX/UI Designer</DropdownItem>
-			          <DropdownItem>Data Science</DropdownItem>
-			          <DropdownItem>Investor</DropdownItem>
-			        </DropdownMenu>
-			      </Dropdown>
-		        <br></br>
-		        <Button 
-		        disabled={isInvalid} 
-		        type="submit"
-		        color="secondary"
-		        size="lg">
-		          Sign Up
-		        </Button>
-
-		        { error && <p>{error.message}</p> }	
-  			</form>
+  			<div>
+			  	<form className="App down" onSubmit={this.onSubmit}>
+			  		<input
+					    value={username}
+					    onChange={event => this.setState(byPropKey('username', event.target.value))}
+					    type="text"
+				      	placeholder="Full Name"
+					/>
+					<br></br>
+					<input
+					    value={email}
+					    onChange={event => this.setState(byPropKey('email', event.target.value))}
+					    type="text"
+					    placeholder="Email Address"
+					/>
+					<br></br>
+					<input
+					    value={passwordOne}
+					    onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+					    type="password"
+					    placeholder="Password"
+				    />
+					<br></br>
+					<input
+					    value={passwordTwo}
+					    onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+					    type="password"
+					    placeholder="Confirm Password"
+					/>
+			        <br></br>
+			        	<div className="role">
+			        		<button>Web Developer</button>
+			        		<button>UX/UI Designer</button>
+			        		<button>Data Scientist</button>
+			        		<button>Possible Investor</button>
+			        	</div>	
+					<br></br>
+					<button>
+					  	Sign Up
+					</button>
+					   	{ error && <p>{error.message}</p> }	
+			  	</form>
+			</div> 			
   		);
   	}
   }
 
 const SignUpLink = () =>
-	<p>
-		Don't have an account?
+	<p className="App">
+		<strong>Don't have an account?</strong>
 		{' '}
 		<Link to={routes.SIGN_UP}>Sign Up</Link>
 	</p>

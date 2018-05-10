@@ -10,7 +10,6 @@ import HomePage from './Home';
 import AccountPage from './Account';
 import Header from './Header';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
 
 import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
@@ -42,7 +41,7 @@ class App extends Component {
       <div>
         <Header />
         <Router>
-          <div className="nav">
+          <div>
             <Navigation authUser={this.state.authUser} />
             <Route
               exact path={routes.LANDING}

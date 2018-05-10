@@ -3,7 +3,7 @@ import App from './App.css';
 
 const LandingPage = () =>
   <div>
-    <p>Collaborate is a web presence designed 
+    <p className="font">Collaborate is a web presence designed 
     to help people grow their ideas into the 
     full projects that they are capable of becoming. 
     Join to meet others, in your field and adjacent 

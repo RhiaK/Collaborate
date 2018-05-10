@@ -7,9 +7,10 @@ import * as routes from '../constants/routes';
 
 const SignInPage = ({ history }) =>
   <div>
-    <h1>SignIn</h1>
+    <h1 className="App">SignIn</h1>
     <SignInForm history={history} />
     <SignUpLink />
+    <img className="img1" alt="handshake" src="./favicon.ico"></img>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -63,7 +64,7 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className="App" onSubmit={this.onSubmit}>
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
@@ -76,6 +77,7 @@ class SignInForm extends Component {
           type="password"
           placeholder="Password"
         />
+        <br></br>
         <button disabled={isInvalid} type="submit">
           Sign In
         </button>
