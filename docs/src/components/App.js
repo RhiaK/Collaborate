@@ -9,6 +9,8 @@ import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
 import Header from './Header';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
@@ -38,11 +40,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Header />
-        </div>  
+        <Header />
         <Router>
-          <div>
+          <div className="nav">
             <Navigation authUser={this.state.authUser} />
             <Route
               exact path={routes.LANDING}
@@ -70,7 +70,10 @@ class App extends Component {
             /> 
           </div> 
         </Router>
-      </div> 
+        <footer>
+          <p>© 2018 Rhiannon Kaulitzke. All rights reserved.</p>
+        </footer>
+      </div>  
     );
   }
 }
