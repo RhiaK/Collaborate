@@ -9,7 +9,7 @@ const SignUpPage = ({ history }) =>
 	<div>
 	  <h1 className="App">Sign Up</h1>
 	  <SignUpForm history={ history }></SignUpForm> 	
-	  <img className="img1" alt="handshake" src="./img.png"></img>
+	  <img className="img1" alt="handshake" src="./favicon.ico"></img>
 	</div>
 
 const INITIAL_STATE = {

@@ -10,7 +10,7 @@ const SignInPage = ({ history }) =>
     <h1 className="App">SignIn</h1>
     <SignInForm history={history} />
     <SignUpLink />
-    <img className="img1" alt="handshake" src="./img.png"></img>
+    <img className="img1" alt="handshake" src="./favicon.ico"></img>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({

@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () =>
   <div>
-    <img className="img2" alt="handshake" src="./img.png"></img>
+    <img className="img2" alt="handshake" src="./favicon.ico"></img>
     <h1 className="App">Projects</h1>
   </div>
 
