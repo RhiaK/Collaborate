@@ -1,10 +1,10 @@
 import React from 'react';
+import ProjectsContainer from '../containers/ProjectsContainer';
 
 const AccountPage = () =>
   <div>
-    <img className="img2" alt="handshake" src="./img.png"></img>
-    <h1 className="App">My Account</h1>
-    <h3 className="App">Add a Project</h3>  
+    <img className="img2" alt="handshake" src="./favicon.ico"></img>
+    <ProjectsContainer /> 
   </div>
 
 export default AccountPage;

@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+
 const config = {
     apiKey: "AIzaSyCk9XoU1Agz1LvMaZgqTrPgBgZdPnLphVc",
     authDomain: "collaborate-4b360.firebaseapp.com",
@@ -14,7 +15,9 @@ if (!firebase.apps.length) {
 }
 
 const auth = firebase.auth();
+const db = firebase.database();
 
+export default db;
 export {
   auth
 };

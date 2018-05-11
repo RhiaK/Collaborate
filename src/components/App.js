@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import Auth from '../firebase';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
@@ -9,6 +9,7 @@ import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
 import Header from './Header';
+import CreateForm from './CreateForm';
 import './App.css';
 
 import * as routes from '../constants/routes';
@@ -67,6 +68,10 @@ class App extends Component {
               exact path={routes.ACCOUNT}
               component={() => <AccountPage />}
             /> 
+            <Route
+              exact path={routes.CREATE_FORM}
+              component={() => <CreateForm />}
+            />  
           </div> 
         </Router>
         <footer>
