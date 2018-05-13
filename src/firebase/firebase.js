@@ -2,22 +2,22 @@ import * as firebase from 'firebase';
 
 
 const config = {
-    apiKey: "AIzaSyCk9XoU1Agz1LvMaZgqTrPgBgZdPnLphVc",
-    authDomain: "collaborate-4b360.firebaseapp.com",
-    databaseURL: "https://collaborate-4b360.firebaseio.com",
-    projectId: "collaborate-4b360",
-    storageBucket: "collaborate-4b360.appspot.com",
-    messagingSenderId: "1045228056630"
-  };
+    apiKey: "AIzaSyBP4OhQm8r3eZmlQlfWMyi6n3VYOOKlhoY",
+    authDomain: "collaborate-now.firebaseapp.com",
+    databaseURL: "https://collaborate-now.firebaseio.com",
+    projectId: "collaborate-now",
+    storageBucket: "",
+    messagingSenderId: "670646941571"
+};
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(config);
-}
+firebase.initializeApp(config);
+
 
 const auth = firebase.auth();
-const db = firebase.database();
 
-export default db;
+
+
+export default firebase;
 export {
   auth
 };

@@ -1,10 +1,11 @@
 import React from 'react';
-import ProjectsContainer from '../containers/ProjectsContainer';
+import Projects from './Projects';
+const cors = require('cors')({origin: true});
 
 const AccountPage = () =>
   <div>
     <img className="img2" alt="handshake" src="./favicon.ico"></img>
-    <ProjectsContainer /> 
+    <Projects /> 
   </div>
 
 export default AccountPage;

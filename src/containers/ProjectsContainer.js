@@ -18,17 +18,20 @@ class ProjectsContainer extends Component {
 		this.updateProject = this.updateProject.bind(this);
     this.editProject = this.editProject.bind(this);
 	}
-  componentDidMount() {
-    this.fetchData();
-  }
-  fetchData(){
-    ProjectModel.all().then((res)=> {
-      this.setState ({
-        projects: res.data.projects,
-        project: ''
-      }); 
-    });
-  }
+
+
+  // componentDidMount() {
+  //   this.fetchData();
+  // }
+  // fetchData(){
+  //   ProjectModel.all().then((res)=> {
+  //     this.setState ({
+  //       projects: res.data.projects,
+  //       project: ''
+  //     }); 
+  //   });
+  // }
+
 	createProject(project) {
 	    let newProject = {
 	        body: project,

@@ -1,53 +1,62 @@
 import React, { Component, props } from 'react';
+import firebase from '../firebase/firebase'
+const firebaseRef = firebase.database().ref;
+const cors = require('cors')({origin: true});
 
 class CreateForm extends Component {
-	constructor(){
-		super()
-		this.state = {
-			project: {
-			name: '',
-			description: '',
-			requests: ''
-			}
-		};
+  constructor(){
+    super()
+    this.state = {
+      project: {
+      name: '',
+      description: '',
+      requests: ''
+      }
+    };
 
 
-		this.onNameChange = this.onNameChange.bind(this);
-		this.onDescChange = this.onDescChange.bind(this);
-		this.onReqChange = this.onReqChange.bind(this);
-    	this.onFormSubmit = this.onFormSubmit.bind(this);
-	}
+    this.onNameChange = this.onNameChange.bind(this);
+    this.onDescChange = this.onDescChange.bind(this);
+    this.onReqChange = this.onReqChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
 
-	onNameChange(event){
-    	this.setState({
-      	name: event.target.value
-    	});
-  	}
-  	onDescChange(event){
-    	this.setState({
-      	description: event.target.value
-    	});
-  	}
-  	onReqChange(event){
-    	this.setState({
-      	requests: event.target.value
-    	});
-  	}
-  	onFormSubmit(event){
-    	event.preventDefault();
-    	let project = {
-    		name: this.state.name,
-    		description: this.state.desc,
-    		requests: this.state.req
-    	};
-    	this.props.createProject(project);	
-    	this.setState({
-    		project: {
-    		name: "",
-    		description: "",
-    		requests: ""
-    		}
-   		});
+   onNameChange(event){
+      this.setState({
+        name: event.target.value
+      });
+    }
+    onDescChange(event){
+      this.setState({
+        description: event.target.value
+      });
+    }
+    onReqChange(event){
+      this.setState({
+        requests: event.target.value
+      });
+    }
+    onFormSubmit(event){
+      event.preventDefault();
+      let project = {
+        name: this.state.name,
+        description: this.state.desc,
+        requests: this.state.req
+      };
+      firebaseRef.push().set(project);
+      this.setState({
+        name: "",
+        description: "",
+        requests: ""
+      });
+    	// this.props.createProject(project);	
+    	// this.setState({
+    	// 	project: {
+    	// 	name: "",
+    	// 	description: "",
+    	// 	requests: ""
+    	// 	}
+   		// });
     }
 
   render() {
