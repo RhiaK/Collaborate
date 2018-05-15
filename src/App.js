@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import ThreadDisplay from './ThreadDisplay/components/ThreadDisplay';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
-import PasswordForgetPage from './PasswordForget';
-import HomePage from './Home';
 import AccountPage from './Account';
 import Header from './Header';
 import './App.css';
 
-import * as routes from '../constants/routes';
-import { firebase } from '../firebase';
+import * as routes from './constants/routes';
+import firebase from 'firebase';
 
-var fontStyle = {
-  fontFamily: 'Alegreya Sans SC'
-};
-//style={fontStyle}>
-
+// var config = {
+//     apiKey: "AIzaSyClUztdUeVvfd6pV--OUGtCShi9AN-dwB4",
+//     authDomain: "collaborate3-1234.firebaseapp.com",
+//     databaseURL: "https://collaborate3-1234.firebaseio.com",
+//     projectId: "collaborate3-1234",
+//     storageBucket: "",
+//     messagingSenderId: "841289549058"
+//   };
+//   firebase.initializeApp(config);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,9 +29,9 @@ class App extends Component {
       authUser: null
     };
   }
-
   componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
+  const firebase=require('firebase');
+    firebase.auth().onAuthStateChanged(authUser => {
       authUser
         ? this.setState(() => ({ authUser }))
         : this.setState(() => ({ authUser: null }));
@@ -37,9 +39,11 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div>
         <Header />
+        
         <Router>
           <div>
             <Navigation authUser={this.state.authUser} />
@@ -54,14 +58,6 @@ class App extends Component {
             <Route
               exact path={routes.SIGN_IN}
               component={() => <SignInPage />}
-            />
-            <Route
-              exact path={routes.PASSWORD_FORGET}
-              component={() => <PasswordForgetPage />}
-            />
-            <Route
-              exact path={routes.HOME}
-              component={() => <HomePage />}
             />
             <Route
               exact path={routes.ACCOUNT}

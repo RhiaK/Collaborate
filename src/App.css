@@ -56,6 +56,52 @@ ul li{
   padding-right: 5px;
 }
 
+.postBody{
+  border: none;
+}
+
+.post-update-button{
+  width: 50px;
+  background-color: #3A6654;
+}
+
+.post-comment-button{
+  width: 62px;
+  background-color: #177AA6;
+}
+
+.post-editor-input{
+  width: 70%;
+  height: 50px;
+  position: fixed;
+  bottom: 90px;
+  top: 643px;
+  right: 15%;
+}
+
+@media(max-width: 900px) {
+.post-editor-input{
+  width: 70%;
+  height: 50px;
+  position: fixed;
+  bottom: 90px;
+  top: 540px;
+  right: 15%;
+  }
+}
+
+.post-editor-button{
+  bottom: 60px;
+  right: 15%;
+  width: 85px;
+  position: fixed;
+}
+
+.post-delete-button{
+  background-color: #DE3333;
+  width: 50px;
+}
+
 .App-header {
   background-color: rgba(0, 171, 223, 0.55);
   height: 40px;

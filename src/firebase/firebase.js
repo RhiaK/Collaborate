@@ -1,14 +1,13 @@
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyCk9XoU1Agz1LvMaZgqTrPgBgZdPnLphVc",
-    authDomain: "collaborate-4b360.firebaseapp.com",
-    databaseURL: "https://collaborate-4b360.firebaseio.com",
-    projectId: "collaborate-4b360",
-    storageBucket: "collaborate-4b360.appspot.com",
-    messagingSenderId: "1045228056630"
+    apiKey: "AIzaSyClUztdUeVvfd6pV--OUGtCShi9AN-dwB4",
+    authDomain: "collaborate3-1234.firebaseapp.com",
+    databaseURL: "https://collaborate3-1234.firebaseio.com",
+    projectId: "collaborate3-1234",
+    storageBucket: "",
+    messagingSenderId: "841289549058"
   };
-
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import * as routes from '../constants/routes';
-import { auth } from '../firebase';
+import * as routes from './constants/routes';
+import { auth } from './firebase';
 import './App.css';
-import Menu, {SubMenu, MenuItem} from 'rc-menu';
+
 
 const SignUpPage = ({ history }) =>
 	<div>
@@ -17,7 +17,6 @@ const INITIAL_STATE = {
 	email: '',
 	passwordOne: '',
 	passwordTwo: '',
-	role: '',
 	error: null
 };
 
@@ -48,7 +47,6 @@ const byPropKey = (propertyName, value) => () => ({
 	      username,
 	      email,
 	      passwordOne,
-	      role,
 	    } = this.state;
 
 	    const {
@@ -73,7 +71,6 @@ const byPropKey = (propertyName, value) => () => ({
 	      email,
 	      passwordOne,
 	      passwordTwo,
-	      role,
 	      error,
 	    } = this.state;
 
@@ -114,13 +111,6 @@ const byPropKey = (propertyName, value) => () => ({
 					    placeholder="Confirm Password"
 					/>
 			        <br></br>
-			        	<div className="role">
-			        		<button>Web Developer</button>
-			        		<button>UX/UI Designer</button>
-			        		<button>Data Scientist</button>
-			        		<button>Possible Investor</button>
-			        	</div>	
-					<br></br>
 					<button>
 					  	Sign Up
 					</button>
