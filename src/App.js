@@ -66,7 +66,7 @@ class App extends Component {
           </div> 
         </Router>
         <footer>
-          <p>© 2018 Rhiannon Kaulitzke. All rights reserved.</p>
+          <p className="font">© 2018 Rhiannon Kaulitzke. All rights reserved.</p>
         </footer>
       </div>  
     );
