@@ -15,3 +15,6 @@ Troubles:
 	My background image ia a little wonky when large, I could not get it to respond well to changes in screen size.
 
 	I would like to make the entire app reactive for phone usage.
+
+Project Time's Up Troubles:
+	I am unable to set the signup to specify the role of the individual, unable to delete properly or update, and don't have the ability to add comments to projects. 

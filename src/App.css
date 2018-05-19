@@ -11,13 +11,14 @@
   right: 0;
   margin-right: 10px;
 }
+
 .img1 {
   width: 799px;
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: auto; /* Half the height */
+  margin-top: auto;  Half the height 
   margin-left: -400px;
   bottom: 20px;
   opacity: 0.8;
@@ -56,7 +57,7 @@ body{
   padding-right: 70px;
   padding-left: 85px;
   color: #47525E;
-  font-size: 19px;
+  font-size: 18px;
   }
 }
 
@@ -82,6 +83,13 @@ ul li{
   padding-right: 5px;
 }
 
+.post-name-input{
+  width: 70%;
+  position: fixed;
+  bottom: 165px;
+  right: 15%;
+}
+
 .postBody{
   border: none;
 }
@@ -103,6 +111,10 @@ ul li{
   bottom: 90px;
   top: 643px;
   right: 15%;
+  padding-left: 0;
+  padding-top: 0;
+  padding-right: 0.4em;
+  padding-bottom: 0.4em;
 }
 
 @media(max-width: 900px) {
