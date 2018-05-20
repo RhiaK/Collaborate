@@ -24,8 +24,8 @@ const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
 
-  class SignUpForm extends Component {
-  	constructor(props) {
+class SignUpForm extends Component {
+  constructor(props) {
   		super(props);
 
   	this.state = { ...INITIAL_STATE };
@@ -34,15 +34,15 @@ const byPropKey = (propertyName, value) => () => ({
     this.state = {
       dropdownOpen: false
     };
-  	}
+  }
 
-  	toggle() {
+  toggle() {
     	this.setState(prevState => ({
       	dropdownOpen: !prevState.dropdownOpen
     	}));
-  	}
+  }
 
-  	onSubmit = (e) => {
+  onSubmit = (e) => {
 	    const {
 	      username,
 	      email,
@@ -63,9 +63,9 @@ const byPropKey = (propertyName, value) => () => ({
 	      });
 
 	    e.preventDefault();
-  	}
+  }
 
-  	render() {
+  render() {
   		const {
 	      username,
 	      email,
@@ -79,6 +79,7 @@ const byPropKey = (propertyName, value) => () => ({
 	      passwordOne === '' ||
 	      email === '' ||
 	      username === '';
+
 
   		return (
   			<div>

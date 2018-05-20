@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ThreadDisplay from './ThreadDisplay/components/ThreadDisplay';
+
+import Auth from './firebase';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
+
 import AccountPage from './Account';
 import Header from './Header';
 import './App.css';
 
 import * as routes from './constants/routes';
 import firebase from 'firebase';
+
+
 
 // var config = {
 //     apiKey: "AIzaSyClUztdUeVvfd6pV--OUGtCShi9AN-dwB4",
@@ -62,7 +67,7 @@ class App extends Component {
             <Route
               exact path={routes.ACCOUNT}
               component={() => <AccountPage />}
-            /> 
+            />  
           </div> 
         </Router>
         <footer>
