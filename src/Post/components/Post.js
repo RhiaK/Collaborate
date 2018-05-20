@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import ThreadDisplay from '../../ThreadDisplay/components/ThreadDisplay';
-import firebase from 'firebase';
 // import PostComment from '../../Comment/components/Comment';
 
 
@@ -13,8 +11,26 @@ class Post extends Component {
     super(props);
     this.state = {
       postBody: '',
+      comment: '',
     };
- }   
+
+  // this.handleCommentInputChange = this.handleCommentChange.bind(this);
+  // this.createComment = this.createComment.bind(this);
+  }
+
+  // handleCommentInputChange(e) {
+  //     this.setState({
+  //       newCommentBody: e.target.value
+  //     });
+
+  // }
+
+  // createComment(){
+  //   this.props.addComment(this.state.newCommentBody)
+  //   this.setState({
+  //     newCommentBody: ''
+  //   });
+  // }   
 	// this.onChange=this.onChange.bind(this);
 	// this.updateContent=this.updateContent.bind(this);   
 	// // this.removeItem=this.removeItem.bind(this); 
@@ -47,13 +63,12 @@ class Post extends Component {
 		return(
         <div className="post">
           <div className="panel-body">
-	        <input 
-	         type="text"
+	        <textarea
 	         key="index" 
-		     className="postBody"
-		     value={this.props.postBody}
-		     onChange={ this.updateContent}
-		    /> 
+		       className="postBody"
+		       value={this.props.postBody}
+		       onChange={this.updateContent}
+           />
           </div>
         </div>
         )

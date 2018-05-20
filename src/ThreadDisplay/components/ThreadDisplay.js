@@ -9,6 +9,7 @@ constructor(props) {
     super(props);
 
     this.addPost = this.addPost.bind(this);
+    this.addComment = this.addComment.bind(this);
     
 
     this.state = {
@@ -32,16 +33,31 @@ constructor(props) {
     this.setState(newState);
   }
 
+  addComment(newCommentBody){
+    const newState = Object.assign({}, this.state);
+    newState.comments.push(newCommentBody);
+    this.props.db.ref().push().set(newCommentBody);
+    this.setState(newState);
+  }
+
 render(){
   return (
       <div>
+        <div className="up">
           {this.state.posts.map((postBody, index) => {
             return (
-              <Post key={index} postBody={postBody} />
+              <Post 
+              className="up"
+              key={index} 
+              postBody={postBody} 
+              />
             )
           })
         }
-        <PostEditor addPost={this.addPost} />
+        </div>
+          <div>
+            <PostEditor addPost={this.addPost} />
+          </div>
       </div>
   )
 }

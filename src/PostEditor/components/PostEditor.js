@@ -20,13 +20,6 @@ class PostEditor extends Component {
 
 	}
 
-	handlePostNameInputChange(e) {
-    	this.setState({
-     		newNameBody: e.target.value
-    	});
-
-	}
-
 	createPost(){
 		this.props.addPost(this.state.newPostBody)
 		this.setState({
@@ -36,8 +29,8 @@ class PostEditor extends Component {
 
 	render() {
 		return (
-        <div className="panel panel-default post">
-          <div className="panel-body">
+        <div>
+          <div className="bottom">
             <textarea
             placeholder="Describe your project"
             className="form-control post-editor-input" 

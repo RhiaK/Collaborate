@@ -7,7 +7,7 @@
 .img2 {
   height: 100px;
   width: auto;
-  position: fixed;
+  position: absolute;
   top: 5px;
   right: 0;
   margin-right: 10px;
@@ -51,6 +51,19 @@ h1 {
 
 body{
   font-family: 'Alegreya Sans SC', 500, sans-serif;
+  margin-bottom: 130px;
+}
+
+.bottom{
+  bottom: 55px;
+  position: fixed;
+  width: 100%;
+  background-color: #A2DB9E;
+  height: 75px;
+}
+
+.up{
+  bottom: 130px;
 }
 
 @media(max-width: 900px) {
@@ -72,7 +85,7 @@ p {
 ul {
   margin-top: 0;
   text-align: center;
-  margin-left: -45px;
+  margin-left: -25px;
   background-color: rgba(0, 171, 223, 0.55);
 }
 
@@ -84,34 +97,39 @@ ul li{
   padding-right: 5px;
 }
 
-.post-name-input{
-  width: 70%;
-  height: 15px;
-  position: fixed;
-  bottom: 165px;
-  right: 15%;
-}
-
 .postBody{
   border: none;
+  font-size: 18px;
+  width: 65%;
+  height: 65px;
 }
 
-.post-update-button{
-  width: 50px;
-  background-color: #3A6654;
+.commentBody{
+  width: 50%;
+  margin-left: 15%;
 }
 
-.post-comment-button{
-  width: 62px;
-  background-color: #177AA6;
+.comment-button{
+  margin-left: 5px;
+  width: 65px;
+  position: relative;
+  background-color: #1F6998;
+  bottom: 12px;
+}
+
+.post-editor-button{
+  position: relative;
+  margin-left: 82%;
+  margin-bottom: -50px;
+  margin-top: 10px;
 }
 
 .post-editor-input{
   width: 70%;
   height: 50px;
   position: fixed;
-  bottom: 90px;
-  top: 643px;
+  bottom: 80px;
+  top: 683px;
   right: 15%;
   padding-left: 0;
   padding-top: 0;
@@ -124,26 +142,14 @@ ul li{
   width: 70%;
   height: 50px;
   position: fixed;
-  bottom: 90px;
-  top: 540px;
+  bottom: 70px;
+  top: 580px;
   right: 15%;
   }
 }
 
-.post-editor-button{
-  bottom: 60px;
-  right: 15%;
-  width: 85px;
-  position: fixed;
-}
-
-.post-delete-button{
-  background-color: #DE3333;
-  width: 50px;
-}
-
 .App-header {
-  background-color: rgba(0, 171, 223, 0.55);
+  background-color: #73D0F1;
   height: 40px;
   padding: 20px;
   color: #47525E;
@@ -154,10 +160,6 @@ ul li{
   font-family: 'Alegreya Sans SC', 500, sans-serif;
   margin: 0;
   font-size: 40px;
-}
-
-.down {
-  margin-top: 75px;
 }
 
 button {
@@ -177,8 +179,8 @@ input {
   border-radius: 5px;
 }
 
-footer {
-  background-color: rgba(0, 171, 223, 0.55);
+footer{
+  background-color: #73D0F1;
   height: 55px;
   position: fixed;
   bottom: 0;
@@ -188,5 +190,6 @@ footer {
 footer p {
   text-align: center; 
   color: #47525E;
+  margin-top: 15px;
 }
 

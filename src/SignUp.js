@@ -44,7 +44,6 @@ class SignUpForm extends Component {
 
   onSubmit = (e) => {
 	    const {
-	      username,
 	      email,
 	      passwordOne,
 	    } = this.state;
