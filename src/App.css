@@ -85,6 +85,7 @@ ul li{
 
 .post-name-input{
   width: 70%;
+  height: 15px;
   position: fixed;
   bottom: 165px;
   right: 15%;

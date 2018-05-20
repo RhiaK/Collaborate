@@ -10,10 +10,10 @@ class PostEditor extends Component {
 		};
 
 	this.handlePostEditorInputChange = this.handlePostEditorInputChange.bind(this);
-	this.createPost = this.createPost.bind(this);
+  this.createPost = this.createPost.bind(this);
   	}
 
-  	handlePostEditorInputChange(e) {
+  handlePostEditorInputChange(e) {
     	this.setState({
      		newPostBody: e.target.value
     	});
@@ -28,10 +28,9 @@ class PostEditor extends Component {
 	}
 
 	createPost(){
-		this.props.addPost(this.state.newPostBody);
+		this.props.addPost(this.state.newPostBody)
 		this.setState({
-			newPostName: '',
-			newPostBody: '',
+			newPostBody: ''
 		});
 	}
 
@@ -39,12 +38,7 @@ class PostEditor extends Component {
 		return (
         <div className="panel panel-default post">
           <div className="panel-body">
-            <input type="text"
-            placeholder="Name your project"
-            className="post-name-input" 
-            value={this.state.newPostName} 
-            onChange={this.handlePostNameInputChange} />
-            <input type="text" 
+            <textarea
             placeholder="Describe your project"
             className="form-control post-editor-input" 
             value={this.state.newPostBody} 

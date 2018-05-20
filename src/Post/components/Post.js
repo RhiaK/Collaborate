@@ -14,34 +14,35 @@ class Post extends Component {
     this.state = {
       postBody: '',
     };
-	this.onChange=this.onChange.bind(this);
-	this.updateContent=this.updateContent.bind(this);   
-	// this.removeItem=this.removeItem.bind(this); 
+ }   
+	// this.onChange=this.onChange.bind(this);
+	// this.updateContent=this.updateContent.bind(this);   
+	// // this.removeItem=this.removeItem.bind(this); 
 
-  }
+ //  }
 
-  onChange(e) {
-  	this.firebase.ref(this).onUpdate(this.state.postBody);
-    this.setState({ 
-    	postBody: e.target.value 
-    });
-  }
+ //  onChange(e) {
+ //  	this.firebase.ref(this).onUpdate(this.state.postBody);
+ //    this.setState({ 
+ //    	postBody: e.target.value 
+ //    });
+ //  }
 
-  updateContent(e) {
-  	e.preventDefault()
-  	console.log(this.state);
-  	this.props.onUpdatePost(this.state.postBody);
-    this.setState({ 
-    	postBody: "" 
-    });
-  }	
+ //  updateContent(e) {
+ //  	e.preventDefault()
+ //  	console.log(this.state);
+ //  	this.props.onUpdatePost(this.state.postBody);
+ //    this.setState({ 
+ //    	postBody: "" 
+ //    });
+ //  }	
 
-  removeItem() {
-  	firebase.database().ref().remove(this);
-  	this.setState({
-  		postBody: '',
-  	});
-  }
+ //  removeItem() {
+ //  	firebase.database().ref().remove(this);
+ //  	this.setState({
+ //  		postBody: '',
+ //  	});
+ //  }
 	render() {
 		return(
         <div className="post">
@@ -53,10 +54,6 @@ class Post extends Component {
 		     value={this.props.postBody}
 		     onChange={ this.updateContent}
 		    /> 
-            <button type="submit" className="btn post-update-button" 
-            onClick={this.onUpdate}>Update</button>
-            <button type="submit" className="btn post-delete-button" 
-            onClick={this.removeItem}>Delete</button>
           </div>
         </div>
         )
