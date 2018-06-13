@@ -30,17 +30,17 @@ class SignUpForm extends Component {
 
   	this.state = { ...INITIAL_STATE };
 
-  	this.toggle = this.toggle.bind(this);
+  	// this.toggle = this.toggle.bind(this);
     this.state = {
       dropdownOpen: false
     };
   }
 
-  toggle() {
-    	this.setState(prevState => ({
-      	dropdownOpen: !prevState.dropdownOpen
-    	}));
-  }
+  // toggle() {
+  //   	this.setState(prevState => ({
+  //     	dropdownOpen: !prevState.dropdownOpen
+  //   	}));
+  // }
 
   onSubmit = (e) => {
 	    const {
@@ -84,28 +84,28 @@ class SignUpForm extends Component {
   			<div>
 			  	<form className="App down" onSubmit={this.onSubmit}>
 			  		<input
-					    value={username}
+					    value={this.state.value}
 					    onChange={event => this.setState(byPropKey('username', event.target.value))}
 					    type="text"
 				      	placeholder="Full Name"
 					/>
 					<br></br>
 					<input
-					    value={email}
+					    value={this.state.value}
 					    onChange={event => this.setState(byPropKey('email', event.target.value))}
 					    type="text"
 					    placeholder="Email Address"
 					/>
 					<br></br>
 					<input
-					    value={passwordOne}
+					    value={this.state.value}
 					    onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
 					    type="password"
 					    placeholder="Password"
 				    />
 					<br></br>
 					<input
-					    value={passwordTwo}
+					    value={this.state.value}
 					    onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
 					    type="password"
 					    placeholder="Confirm Password"

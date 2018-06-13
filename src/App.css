@@ -19,7 +19,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: auto;  Half the height 
+  margin-top: auto;
   margin-left: -400px;
   bottom: 20px;
   opacity: 0.8;
@@ -31,10 +31,10 @@
   .img1 {
   width: 799px;
   height: auto;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: auto; /* Half the height */
+  margin-top: auto;
   margin-left: -400px;
   bottom: 0px;
   opacity: 0.8;

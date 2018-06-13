@@ -2,26 +2,33 @@
   "name": "collaborate",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rhiak.github.io/collaborate/",
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "cors": "^2.8.4",
-    "firebase": "^5.0.1",
+    "dependencies": "0.0.1",
+    "firebase": "^5.0.4",
     "firebaseui": "^3.0.0",
-    "npm": "^6.0.1",
-    "rc-menu": "^7.0.3",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-dropdown": "^1.4.2",
+    "gh-pages": "^1.2.0",
+    "npm": "^6.1.0",
+    "peer": "^0.2.8",
+    "rc-menu": "^7.0.5",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-dropdown": "^1.5.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-simple-dropdown": "^3.2.0",
-    "reactstrap": "^6.0.1"
+    "reactstrap": "^6.0.1",
+    "ws": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }

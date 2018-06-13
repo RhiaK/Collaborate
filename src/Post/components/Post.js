@@ -44,14 +44,14 @@ class Post extends Component {
  //    });
  //  }
 
- //  updateContent(e) {
- //  	e.preventDefault()
- //  	console.log(this.state);
- //  	this.props.onUpdatePost(this.state.postBody);
- //    this.setState({ 
- //    	postBody: "" 
- //    });
- //  }	
+  updateContent(e) {
+  	e.preventDefault()
+  	console.log(this.state);
+  	this.props.onUpdatePost(this.state.postBody);
+    this.setStateSafe({ 
+    	postBody: "" 
+    });
+  }	
 
  //  removeItem() {
  //  	firebase.database().ref().remove(this);
@@ -63,11 +63,12 @@ class Post extends Component {
 		return(
         <div className="post">
           <div className="panel-body">
-	        <textarea
+	        <input
+           type="text"
 	         key="index" 
 		       className="postBody"
-		       value={this.props.postBody}
 		       onChange={this.updateContent}
+           value={this.props.postBody}
            />
           </div>
         </div>
