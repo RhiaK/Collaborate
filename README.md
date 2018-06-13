@@ -12,7 +12,7 @@ I now have an app in which people can collaborate with others about ideas they h
 Troubles:
 	I wanted to have the selection of the role of the person signing up to be a dropdown menu but had a lot of trouble trying to implement reactstrap for that functionality and could not find any other way to do so. I am going for an MVP, maybe I can get this fixed at a later time.
 
-	My background image ia a little wonky when large, I could not get it to respond well to changes in screen size.
+	My background image is a little wonky when large, I could not get it to respond well to changes in screen size.
 
 	I would like to make the entire app reactive for phone usage.
 
