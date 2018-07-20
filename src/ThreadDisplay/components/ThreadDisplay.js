@@ -34,6 +34,19 @@ class ThreadDisplay extends Component {
     });
   }
 
+  handleUpdate() {
+    var updates = {};
+    updates['/id'] = 1;
+    updates['/title'] = 'Apple';
+
+    return this.props.db.ref().child('index').update(updates);
+}
+
+
+  handleRemove() {
+    return this.props.db.ref().child('index').remove();
+  }  
+
   // addComment(newCommentBody){
   //   const newState = Object.assign({}, this.state);
   //   newState.comments.push(newCommentBody);
@@ -57,6 +70,7 @@ class ThreadDisplay extends Component {
           </div>
             <div>
               <PostEditor addPost={this.addPost} />
+
             </div>
         </div>
     )

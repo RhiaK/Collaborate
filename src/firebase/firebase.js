@@ -2,12 +2,12 @@ import * as firebase from 'firebase';
 
 
 const config = {
-    apiKey: "AIzaSyClUztdUeVvfd6pV--OUGtCShi9AN-dwB4",
-    authDomain: "collaborate3-1234.firebaseapp.com",
-    databaseURL: "https://collaborate3-1234.firebaseio.com",
-    projectId: "collaborate3-1234",
-    storageBucket: "",
-    messagingSenderId: "841289549058"
+    apiKey: "AIzaSyBP4OhQm8r3eZmlQlfWMyi6n3VYOOKlhoY",
+    authDomain: "collaborate-now.firebaseapp.com",
+    databaseURL: "https://collaborate-now.firebaseio.com",
+    projectId: "collaborate-now",
+    storageBucket: "collaborate-now.appspot.com",
+    messagingSenderId: "670646941571"
   };
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
